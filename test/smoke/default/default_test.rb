@@ -5,14 +5,26 @@
 # The Inspec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
 
-unless os.windows?
-  describe user('root') do
-    it { should exist }
-    skip 'This is an example test, replace with your own test.'
-  end
+script = <<-EOH
+  nvm version
+EOH
+
+describe powershell(script) do
+  its('stdout') { should match "1.1.2.*" }
 end
 
-describe port(80) do
-  it { should_not be_listening }
-  skip 'This is an example test, replace with your own test.'
+script = <<-EOH
+  node -v 
+EOH
+
+describe powershell(script) do
+  its('stdout') { should match "v0.10.40.*" }
+end
+
+script = <<-EOH
+  npm -v 
+EOH
+
+describe powershell(script) do
+  its('stdout') { should match "1.4.28.*" }
 end

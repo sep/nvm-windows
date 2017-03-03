@@ -1,4 +1,6 @@
 # nvm-windows
 
-TODO: Enter the cookbook description here.
+Installed nvm-windows see https://github.com/coreybutler/nvm-windows
+
+Tested on Windows 10
 
