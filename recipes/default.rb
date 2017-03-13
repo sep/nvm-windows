@@ -15,14 +15,6 @@ seven_zip_archive 'nvm_windows_zip_source' do
   timeout   60
 end
 
-#To Install
-# NVM_HOME environment var
-# NVM_SYMLINK
-# %NVM_HOME%;%NVM_SYMLINK% added to path
-#for system and user
-
-#installing node could fail add retries
-
 env 'NVM_HOME' do
   value 'C:\\nvm'
 end
@@ -37,10 +29,6 @@ env 'Path' do
   delim ';'
 end
 
-reboot 'Reboot when nvm is installed' do 
-  action :nothing
-end
-
 script = <<-EOH
   #{TEMP_DIRECTORY}\\nvm-setup.exe /SP- /silent /noicons /DIR="C:\\nvm"
   nvm install #{node["nvm_windows"]["node_verion"] }
@@ -51,5 +39,4 @@ EOH
 batch 'install nvm-windows and node' do 
   code script   
   not_if 'nvm version'
-  #notifies :request_reboot, 'reboot[Reboot when nvm is installed]'
 end

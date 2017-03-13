@@ -1,0 +1,1 @@
+This cookbook installs [nvm-windows](https://github.com/coreybutler/nvm-windows) and a version of node.
