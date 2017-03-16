@@ -10,21 +10,21 @@ script = <<-EOH
 EOH
 
 describe powershell(script) do
-  its('stdout') { should match "1.1.2.*" }
+  its('stdout') { should match '1.1.2.*' }
 end
 
 script = <<-EOH
-  node -v 
+  node -v
 EOH
 
 describe powershell(script) do
-  its('stdout') { should match "v0.10.40.*" }
+  its('stdout') { should match 'v0.10.40.*' }
 end
 
 script = <<-EOH
-  npm -v 
+  npm -v
 EOH
 
 describe powershell(script) do
-  its('stdout') { should match "1.4.28.*" }
+  its('stdout') { should match '1.4.28.*' }
 end
