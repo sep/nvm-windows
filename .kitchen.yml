@@ -12,7 +12,9 @@ provisioner:
 
 verifier:
   name: inspec
-  
+  format: junit
+  output: '%{platform}_%{suite}_inspec.xml'
+
 transport:
   name: winrm
 
@@ -20,12 +22,12 @@ platforms:
   - name: win10
     os_type: windows
     shell_type: powershell
-    #attributes: 
-    
+    #attributes:
+
 
 suites:
   - name: default
-    run_list:     
+    run_list:
       - recipe[nvm-windows::default]
     verifier:
       inspec_tests:
