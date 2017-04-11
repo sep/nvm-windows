@@ -30,7 +30,7 @@ env 'Path' do
 end
 
 script = <<-EOH
-  #{TEMP_DIRECTORY}\\nvm-setup.exe /SP- /silent /noicons /DIR='C:\\nvm'
+  #{TEMP_DIRECTORY}\\nvm-setup.exe /SP- /silent /noicons /DIR=C:\\nvm
   nvm install #{node['nvm_windows']['node_verion']}
   nvm use #{node['nvm_windows']['node_verion']}
 EOH

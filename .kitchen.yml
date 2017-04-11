@@ -1,7 +1,6 @@
 driver:
   name: vagrant
 
-
 provisioner:
   name: chef_zero
   # You may wish to disable always updating cookbooks in CI or other testing environments.
@@ -22,7 +21,6 @@ platforms:
   - name: win10
     os_type: windows
     shell_type: powershell
-    #attributes:
 
 
 suites:

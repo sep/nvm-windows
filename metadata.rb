@@ -4,7 +4,7 @@ maintainer_email 'rmnowadly@sep.com'
 license 'all_rights'
 description 'Installs/Configures nvm-windows'
 long_description 'Installs/Configures nvm-windows'
-version '0.1.2'
+version '0.1.3'
 
 depends 'seven_zip', '~> 2.0.2'
 
